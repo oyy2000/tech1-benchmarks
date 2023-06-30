@@ -1,15 +1,28 @@
 package com.jedivision.temple.benchmark.youngling;
 
 import com.jedivision.temple.benchmark.AbstractState;
-import com.jedivision.temple.benchmark.BenchmarkRunner;
 import com.jedivision.temple.entity.Youngling;
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.results.format.ResultFormatType;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static com.jedivision.temple.serialization.SerializationType.*;
+import static java.util.concurrent.TimeUnit.MICROSECONDS;
+import static org.openjdk.jmh.annotations.Mode.AverageTime;
+import static org.openjdk.jmh.annotations.Mode.SingleShotTime;
 
-public class SerializationYoungling extends BenchmarkRunner {
+@BenchmarkMode({AverageTime, SingleShotTime})
+@OutputTimeUnit(MICROSECONDS)
+@Fork(2)
+@Warmup(iterations = 5)
+@Measurement(iterations = 5, time = 2, timeUnit = TimeUnit.SECONDS)
+public class SerializationYoungling {
 
     @State(Scope.Benchmark)
     public static class SerializationState extends AbstractState {
@@ -32,21 +45,26 @@ public class SerializationYoungling extends BenchmarkRunner {
     }
 
     @Benchmark
+    public long fastjson2(SerializationState state) throws Exception {
+        return state.serialize(FASTJSON2);
+    }
+
+//    @Benchmark
     public long jacksonJson(SerializationState state) throws Exception {
         return state.serialize(JACKSON_JSON);
     }
 
-    @Benchmark
+//    @Benchmark
     public long jacksonSmile(SerializationState state) throws Exception {
         return state.serialize(JACKSON_SMILE);
     }
 
-    @Benchmark
+//    @Benchmark
     public long fst(SerializationState state) throws Exception {
         return state.serialize(FST);
     }
 
-    @Benchmark
+//    @Benchmark
     public long fstUnsafe(SerializationState state) throws Exception {
         return state.serialize(FST_UNSAFE);
     }
@@ -56,13 +74,23 @@ public class SerializationYoungling extends BenchmarkRunner {
         return state.serialize(KRYO);
     }
 
-    @Benchmark
+//    @Benchmark
     public long kryoUnsafe(SerializationState state) throws Exception {
         return state.serialize(KRYO_UNSAFE);
     }
 
-    @Benchmark
+//    @Benchmark
     public long messagePack(SerializationState state) throws Exception {
         return state.serialize(MESSAGE_PACK);
     }
+
+    public static void main(String[] args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                .include(SerializationYoungling.class.getSimpleName())
+                .resultFormat(ResultFormatType.JSON)
+                .build();
+
+        new Runner(opt).run();
+    }
+
 }

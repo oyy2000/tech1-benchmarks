@@ -17,7 +17,7 @@
         <fst.version>2.47</fst.version>
         <jackson.version>2.7.4</jackson.version>
         <jmh.version>1.12</jmh.version>
-        <kryo.version>4.0.0</kryo.version>
+        <kryo.version>5.5.0</kryo.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.6</lombok.version>
         <messagepack.version>0.6.12</messagepack.version>
@@ -45,6 +45,7 @@
             <artifactId>jmh-core</artifactId>
             <version>${jmh.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-generator-annprocess</artifactId>
@@ -73,6 +74,13 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.34</version>
+        </dependency>
+
         <dependency>
             <groupId>de.ruedigermoeller</groupId>
             <artifactId>fst</artifactId>
@@ -80,8 +88,13 @@
         </dependency>
         <dependency>
             <groupId>com.esotericsoftware</groupId>
-            <artifactId>kryo-shaded</artifactId>
+            <artifactId>kryo</artifactId>
             <version>${kryo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>3.23.0</version>
         </dependency>
         <dependency>
             <groupId>org.msgpack</groupId>
@@ -94,10 +107,62 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
+        <!-- Protostuff -->
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+            <version>1.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+            <version>1.7.4</version>
+        </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>Windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <protocExecutable>${project.basedir}/protoc.exe</protocExecutable>
+            </properties>
+        </profile>
+        <profile>
+            <id>unix</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <protocExecutable>${project.basedir}/protoc</protocExecutable>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <protocExecutable>${protocExecutable}</protocExecutable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package com.jedivision.temple.entity.proto;
+
+import "google/protobuf/timestamp.proto";
+
+message Master {
+  int64 id = 1;
+  string balance = 2;
+  int32 age = 3;
+  string sword = 4;
+  string name = 5;
+  Gender gender = 6;
+  string company = 7;
+  string email = 8;
+  string phone = 9;
+  string address = 10;
+  string about = 11;
+  string started = 12;
+  double latitude = 13;
+  double longitude = 14;
+  repeated Task tasks = 15;
+  repeated Force forces = 16;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+}
+
+message Task {
+  int64 id = 1;
+  string description = 2;
+}
+
+message Force {
+  int64 id = 1;
+  string title = 2;
+  string started = 3;
+  repeated string areas = 4;
+  string description = 5;
+}
