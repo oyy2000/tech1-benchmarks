@@ -48,13 +48,13 @@ JMH Java Serialization (JDK, FastJson, Jackson, FST, Kryo, MessagePack) applicat
 ### Master serialization
 
 <p align="center">
-	<img src="https://github.com/tech1-io/tech1-benchmarks/blob/master/jmh-serialization/img/SerMaster.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerMaster.png?raw=true" alt=""/>
 </p>
 
 ### Master deserialization
 
 <p align="center">
-	<img src="https://github.com/tech1-io/tech1-benchmarks/blob/master/jmh-serialization/img/DesrMaster.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrMaster.png?raw=true" alt=""/>
 </p>
 
 
@@ -65,12 +65,12 @@ JMH Java Serialization (JDK, FastJson, Jackson, FST, Kryo, MessagePack) applicat
 ### Complex serialization
 
 <p align="center">
-	<img src="https://github.com/tech1-io/tech1-benchmarks/blob/master/jmh-serialization/img/SerComplex.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerComplex.png?raw=true" alt=""/>
 </p>
 
 ### Complex deserialization
 
 <p align="center">
-	<img src="https://github.com/tech1-io/tech1-benchmarks/blob/master/jmh-serialization/img/DesrComplex.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrComplex.png?raw=true" alt=""/>
 </p>
 
