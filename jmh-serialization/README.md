@@ -71,11 +71,11 @@ RAM: 32 GB
         3. 外层循环200次（控制上述两个循环的次数，最终取平均值）；
     2. 实验截图：
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50×200.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50x200.png?raw=true" alt=""/>
 </p>
 
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50×200 1.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50x200 1.png?raw=true" alt=""/>
 </p>
 
 1. 实验四：
