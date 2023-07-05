@@ -161,6 +161,14 @@ RAM: 32 GB
 	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrMaster.png?raw=true" alt=""/>
 </p>
 
+### Bytes size
+| 工具名        | 序列化后大小（bytes） |
+|:-----------|:--------------|
+| JDK        | 11522161      |
+| protobuf   | 11293679      |
+| kryo       | 11125742      |
+| protostuff | 11256589      |
+| fastjson2  | 11710913      |
 
 ## Complex (~ 141KB) file templates not provided
 
