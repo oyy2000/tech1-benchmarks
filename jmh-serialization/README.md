@@ -17,7 +17,7 @@ RAM: 32 GB
 ```
 ### 工具包版本：
 
-| 工具名       | 版本     |
+| 工具名        | 版本     |
 |:-----------|:-------|
 | JDK        | 1.8    |
 | protobuf   | 3.23.0 |
@@ -50,31 +50,49 @@ RAM: 32 GB
 	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/200x200 2.png?raw=true" alt=""/>
 </p>
 
-2. 实验二：
+1. 实验二：
     1. 实验配置：
         1. 简单对象序列化和反序列化循环1000次；
         2. 复杂对象序列化和反序列化循环200次；
         3. 外层循环50次（控制上述两个循环的次数，最终取平均值）；
     2. 实验截图：
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/200×50 1.png?raw=true" alt=""/>
+</p>
 
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/200×50 2.png?raw=true" alt=""/>
+</p>
 
-3. 实验三：
+1. 实验三：
     1. 实验配置：
         1. 简单对象序列化和反序列化循环1000次；
         2. 复杂对象序列化和反序列化循环50次；
         3. 外层循环200次（控制上述两个循环的次数，最终取平均值）；
     2. 实验截图：
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50×200.png?raw=true" alt=""/>
+</p>
 
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/50×200 1.png?raw=true" alt=""/>
+</p>
 
-4. 实验四：
+1. 实验四：
     1. 实验配置：
         1. 简单对象序列化和反序列化循环1000次；
         2. 复杂对象序列化和反序列化循环50次；
         3. 外层循环50次（用于控制上述两个循环的次数，最终取平均值）；
     2. 实验截图：
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/200x200 2.png?raw=true" alt=""/>
+</p>
 
+<p>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/200200 1.png?raw=true" alt=""/>
+</p>
 
-5. 结论（针对复杂对象）：
+1. 结论（针对复杂对象）：
     1. 由上面几个实验可以看出来，**随着循环次数增多，各个工具的平均的序列化和反序列化的绝对时间都降低**，从minSerialization 的时间也可以看出，说明热启动和冷启动的区分是很有必要的。
     2. 在热启动的情况下，Kryo和ProtoStuff的序列化耗时比protobuf多20%以上，并且随着循环次数增多，**序列化耗时与Protobuf的差异率上升**，在内外循环各200次的情况下，序列化差异率超过100%。整体看来，这两者**反序列化的差异率是负数，说明耗时较protobuf短**，但是随着循环次数反序列化的差异率也在上升。在内外循环各50的情况下，Kryo和ProtoStuff在序列化和反序列化总时长上占优势，但是内外循环上升到200的时候protobuf更占优。
     3. **Kryo在序列化后的字节大小方面更占优势**，相比于使用FareSearchResponse契约的Protobuf，Kryo对于其对应的POJO的序列化字节数减少17.75%，是比较大的提升。
@@ -166,8 +184,8 @@ RAM: 32 GB
   - https://github.com/oyy2000/tech1-benchmarks/tree/master/jmh-serialization
   - https://github.com/oyy2000/serialization-test
 - 测试工具改编自：
-  - [keyhunter/serialization-test: Java serialization test. FastJSON Jackson XML JDK ProtoBuffer Kyro几种序列化方式的demo和简单的性能测试及对比。 (github.com)](https://github.com/keyhunter/serialization-test)
-  - [tech1-io/tech1-benchmarks: Java JMH Benchmarks repository. No Longer Supported. (github.com)](https://github.com/tech1-io/tech1-benchmarks)
+  - [keyhunter/serialization-test: Java serialization test. FastJSON Jackson XML JDK ProtoBuffer Kyro几种序列化方式的demo和简单的性能测试及对比。 (GitHub.com)](https://github.com/keyhunter/serialization-test)
+  - [tech1-io/tech1-benchmarks: Java JMH Benchmarks repository. No Longer Supported. (GitHub.com)](https://github.com/tech1-io/tech1-benchmarks)
 - 参考资料： 
   - [ShouZhiDuan/dsz-serialized: JAVA应用中常见序列化工具数据处理性能测试 (github.com)](https://github.com/ShouZhiDuan/dsz-serialized)
 
