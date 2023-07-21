@@ -61,6 +61,16 @@ public class SerializationMaster {
         return state.serialize(PROTOBUF);
     }
 
+    @Benchmark
+    public long fury(SerializationState state) throws Exception {
+        return state.serialize(FURY);
+    }
+
+    @Benchmark
+    public long furyUnsafe(SerializationState state) throws Exception {
+        return state.serialize(FURY_UNSAFE);
+    }
+
     public static void main(String[] args) throws RunnerException {
         LocalDateTime localDateTime = LocalDateTime.now();
         System.currentTimeMillis();

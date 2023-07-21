@@ -103,10 +103,11 @@ RAM: 32 GB
 2. 使用图形化界面展示更直观。
 3. 鉴于二进制的序列化工具对于当前生产环境的数据支持更好，后期可以添加更多二进制的序列化工具进行序列化反序列化，如：Avro、Thrift等。
 
-## 更新：
+## 更新(2023.7.21)：
 1. 使用JMH的预热功能改善多次测量指标有偏差的情况。
 2. 使用图形化界面展示更直观。
 3. 采用更大的12MB数据Master
+4. 加入fury和fury-unsafe进行比较，unsafe省去了注册class文件的步骤，不做类型检测，生成的序列化数据更大（因为需要保存类型名），亲测在生成fury对象时加上`withRefTracking(false)`更快。
 
 ## Master (~ 12MB) file template
     [
@@ -152,37 +153,49 @@ RAM: 32 GB
 ### Master serialization
 
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerMaster.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerMaster-new.png?raw=true" alt=""/>
 </p>
 
 ### Master deserialization
 
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrMaster.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrMaster-new.png?raw=true" alt=""/>
 </p>
 
-### Bytes size
-| 工具名        | 序列化后大小（bytes） |
-|:-----------|:--------------|
-| JDK        | 11522161      |
-| protobuf   | 11293679      |
-| kryo       | 11125742      |
-| protostuff | 11256589      |
-| fastjson2  | 11710913      |
-
+### Bytes Size
+| 工具名         | 序列化后大小（bytes） |
+|:------------|:--------------|
+| JDK         | 11522161      |
+| protobuf    | 11293679      |
+| kryo        | 11125742      |
+| protostuff  | 11256589      |
+| fastjson2   | 11710913      |
+| fury        | 11402973      |
+| fury-unsafe | 11462437      |
 ## Complex (~ 141KB) file templates not provided
 
 ### Complex serialization
 
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerComplex.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/SerComplex-new.png?raw=true" alt=""/>
 </p>
 
 ### Complex deserialization
 
 <p>
-	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrComplex.png?raw=true" alt=""/>
+	<img src="https://github.com/oyy2000/tech1-benchmarks/blob/master/jmh-serialization/img/DesrComplex-new.png?raw=true" alt=""/>
 </p>
+
+### Bytes Size
+| 工具名         | 序列化后大小（bytes） |
+|:------------|:--------------|
+| JDK         | 27817         |
+| protobuf    | 16738         |
+| kryo        | 12030         |
+| protostuff  | 14647         |
+| fastjson2   | 47889         |
+| fury        | 21597         |
+| fury-unsafe | 25491         |
 
 ### 实验结论
 - 与更新前实验结论一致

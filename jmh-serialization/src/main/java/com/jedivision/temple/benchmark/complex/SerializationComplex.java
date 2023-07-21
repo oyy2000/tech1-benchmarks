@@ -11,7 +11,6 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import static com.jedivision.temple.serialization.SerializationType.*;
 import static java.util.concurrent.TimeUnit.MICROSECONDS;
@@ -59,13 +58,22 @@ public class SerializationComplex {
         return state.serialize(PROTOBUF);
     }
 
+    @Benchmark
+    public long fury(SerializationState state) throws Exception {
+        return state.serialize(FURY);
+    }
+
+    @Benchmark
+    public long furyUnsafe(SerializationState state) throws Exception {
+        return state.serialize(FURY_UNSAFE);
+    }
 
     public static void main(String[] args) throws RunnerException {
         LocalDateTime localDateTime = LocalDateTime.now();
         Options opt = new OptionsBuilder()
                 .include(SerializationComplex.class.getSimpleName())
                 .resultFormat(ResultFormatType.JSON)
-                .output("serialization-complex-" + localDateTime.format(DateTimeFormatter.ofPattern("yy-MM-dd-hh-mm-ss")) + ".json")
+//                .output("serialization-complex-" + localDateTime.format(DateTimeFormatter.ofPattern("yy-MM-dd-hh-mm-ss")) + ".json")
                 .build();
 
         new Runner(opt).run();

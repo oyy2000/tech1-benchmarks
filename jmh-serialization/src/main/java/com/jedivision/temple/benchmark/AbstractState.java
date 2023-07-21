@@ -32,9 +32,10 @@ public class AbstractState {
     private final FstUnsafeSerializer fstUnsafeSerializer = context.getBean(FstUnsafeSerializer.class);
     private final KryoSerializer kryoSerializer = context.getBean(KryoSerializer.class);
     private final MessagePackSerializer messagePackSerializer = context.getBean(MessagePackSerializer.class);
-
     private final ProtoStuffSerializer protoStuffSerializer = context.getBean(ProtoStuffSerializer.class);
     private final ProtobufSerializer protobufSerializer = context.getBean(ProtobufSerializer.class);
+    private final FurySerializer furySerializer = context.getBean(FurySerializer.class);
+    private final FuryUnsafeSerializer furyUnsafeSerializer = context.getBean(FuryUnsafeSerializer.class);
 
     private final Map<SerializationType, AbstractSerializer> serializers = new HashMap<>();
     private Class<?> userClass;
@@ -53,7 +54,8 @@ public class AbstractState {
         serializers.put(MESSAGE_PACK, messagePackSerializer);
         serializers.put(PROTOSTUFF, protoStuffSerializer);
         serializers.put(PROTOBUF, protobufSerializer);
-
+        serializers.put(FURY, furySerializer);
+        serializers.put(FURY_UNSAFE, furyUnsafeSerializer);
     }
 
     protected void initUsers(String jsonPath, Class<?> userClass) throws IOException {
@@ -98,6 +100,8 @@ public class AbstractState {
         System.out.println(PROTOSTUFF + " serialize length = " + serialize(PROTOSTUFF));
         System.out.println(FASTJSON2 + " serialize length = " + serialize(FASTJSON2));
         System.out.println(PROTOBUF + " serialize length = " + serialize(PROTOBUF));
+        System.out.println(FURY + " serialize length = " + serialize(FURY));
+        System.out.println(FURY_UNSAFE + " serialize length = " + serialize(FURY_UNSAFE));
     }
 
     public long serialize(SerializationType serializationType) throws Exception {

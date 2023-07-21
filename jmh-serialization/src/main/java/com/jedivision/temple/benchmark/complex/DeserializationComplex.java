@@ -59,6 +59,16 @@ public class DeserializationComplex {
         state.deserialize(PROTOBUF);
     }
 
+    @Benchmark
+    public void fury(SerializationState state) throws Exception {
+        state.deserialize(FURY);
+    }
+
+    @Benchmark
+    public void furyUnsafe(SerializationState state) throws Exception {
+        state.deserialize(FURY_UNSAFE);
+    }
+
     public static void main(String[] args) throws Exception {
         LocalDateTime localDateTime = LocalDateTime.now();
         Options opt = new OptionsBuilder()
@@ -68,6 +78,10 @@ public class DeserializationComplex {
                 .build();
 
         new Runner(opt).run();
+
+        DeserializationComplex.SerializationState ss = new DeserializationComplex.SerializationState();
+        ss.setup();
+        ss.displaySerializedBytesByType();
     }
 }
 //deserialization-complex-23-06-29-02-18-16

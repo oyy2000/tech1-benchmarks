@@ -58,6 +58,16 @@ public class DeserializationMaster {
         state.deserialize(PROTOBUF);
     }
 
+    @Benchmark
+    public void fury(SerializationState state) throws Exception {
+        state.deserialize(FURY);
+    }
+
+    @Benchmark
+    public void furyUnsafe(SerializationState state) throws Exception {
+        state.deserialize(FURY_UNSAFE);
+    }
+
     public static void main(String[] args) throws Exception {
         LocalDateTime localDateTime = LocalDateTime.now();
         Options opt = new OptionsBuilder()
@@ -67,5 +77,8 @@ public class DeserializationMaster {
                 .build();
 
         new Runner(opt).run();
+        SerializationState ss = new SerializationState();
+        ss.setup();
+        ss.displaySerializedBytesByType();
     }
 }
