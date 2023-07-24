@@ -201,6 +201,9 @@ RAM: 32 GB
 - 与更新前实验结论一致
 
 ## 参考
+- https://github.com/alipay/fury 这里附上部分Fury官网进行序列化工具对比的截图，后续如果有对Fury感兴趣的朋友，欢迎继续来深挖～
+  - ![image](https://github.com/alipay/fury/blob/main/docs/benchmarks/serialization/bench_serialize_MEDIA_CONTENT_to_array_tps.png?raw=true)
+  - ![image](https://github.com/alipay/fury/blob/main/docs/benchmarks/deserialization/bench_deserialize_MEDIA_CONTENT_from_array_tps.png?raw=true)
 - 代码仓库：
   - https://github.com/oyy2000/tech1-benchmarks/tree/master/jmh-serialization
   - https://github.com/oyy2000/serialization-test

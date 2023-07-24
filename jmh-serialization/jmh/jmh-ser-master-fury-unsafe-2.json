@@ -1,0 +1,731 @@
+[
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.fastjson2",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 35818.03883463254,
+            "scoreError" : 5417.381667598859,
+            "scoreConfidence" : [
+                30400.65716703368,
+                41235.4205022314
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33981.65666666667,
+                "50.0" : 34627.53559322034,
+                "90.0" : 44916.925584415585,
+                "95.0" : 45891.43636363636,
+                "99.0" : 45891.43636363636,
+                "99.9" : 45891.43636363636,
+                "99.99" : 45891.43636363636,
+                "99.999" : 45891.43636363636,
+                "99.9999" : 45891.43636363636,
+                "100.0" : 45891.43636363636
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    36146.328571428574,
+                    34760.505172413796,
+                    33981.65666666667,
+                    34604.83728813559,
+                    34770.23275862069
+                ],
+                [
+                    34435.472881355934,
+                    34523.998305084744,
+                    45891.43636363636,
+                    34415.686440677964,
+                    34650.23389830509
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.fury",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 15802.400335148675,
+            "scoreError" : 2565.307621172429,
+            "scoreConfidence" : [
+                13237.092713976246,
+                18367.707956321105
+            ],
+            "scorePercentiles" : {
+                "0.0" : 13976.650694444445,
+                "50.0" : 15279.626102941176,
+                "90.0" : 18945.959605109365,
+                "95.0" : 19069.51037735849,
+                "99.0" : 19069.51037735849,
+                "99.9" : 19069.51037735849,
+                "99.99" : 19069.51037735849,
+                "99.999" : 19069.51037735849,
+                "99.9999" : 19069.51037735849,
+                "100.0" : 19069.51037735849
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    19069.51037735849,
+                    17073.45254237288,
+                    14815.214705882352,
+                    14715.196323529412,
+                    14725.550735294117
+                ],
+                [
+                    13976.650694444445,
+                    14122.831468531469,
+                    15744.0375,
+                    15947.556349206348,
+                    17834.002654867258
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.furyUnsafe",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 15784.113101036655,
+            "scoreError" : 1274.1412293524318,
+            "scoreConfidence" : [
+                14509.971871684224,
+                17058.254330389085
+            ],
+            "scorePercentiles" : {
+                "0.0" : 14791.475735294118,
+                "50.0" : 15675.966265899455,
+                "90.0" : 17006.44231214689,
+                "95.0" : 17031.665254237287,
+                "99.0" : 17031.665254237287,
+                "99.9" : 17031.665254237287,
+                "99.99" : 17031.665254237287,
+                "99.999" : 17031.665254237287,
+                "99.9999" : 17031.665254237287,
+                "100.0" : 17031.665254237287
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    17031.665254237287,
+                    16005.20157480315,
+                    15408.05038167939,
+                    14791.475735294118,
+                    16779.435833333333
+                ],
+                [
+                    15426.856153846154,
+                    14960.95925925926,
+                    16716.141322314048,
+                    15925.076377952755,
+                    14796.269117647058
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.jdk",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 24022.680196653655,
+            "scoreError" : 2220.838744483535,
+            "scoreConfidence" : [
+                21801.84145217012,
+                26243.51894113719
+            ],
+            "scorePercentiles" : {
+                "0.0" : 22413.01777777778,
+                "50.0" : 23567.99597025017,
+                "90.0" : 26791.257775000002,
+                "95.0" : 26952.436,
+                "99.0" : 26952.436,
+                "99.9" : 26952.436,
+                "99.99" : 26952.436,
+                "99.999" : 26952.436,
+                "99.9999" : 26952.436,
+                "100.0" : 26952.436
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    26952.436,
+                    22413.01777777778,
+                    23107.71931818182,
+                    24897.63086419753,
+                    23023.162068965517
+                ],
+                [
+                    25340.65375,
+                    24934.04691358025,
+                    23343.042528735634,
+                    23792.949411764705,
+                    22422.143333333333
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.kryo",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 25889.39560582877,
+            "scoreError" : 420.3203846708319,
+            "scoreConfidence" : [
+                25469.07522115794,
+                26309.7159904996
+            ],
+            "scorePercentiles" : {
+                "0.0" : 25592.720253164556,
+                "50.0" : 25814.130769230767,
+                "90.0" : 26397.68155844156,
+                "95.0" : 26413.4,
+                "99.0" : 26413.4,
+                "99.9" : 26413.4,
+                "99.99" : 26413.4,
+                "99.999" : 26413.4,
+                "99.9999" : 26413.4,
+                "100.0" : 26413.4
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    26031.367948717947,
+                    25656.41898734177,
+                    25648.96582278481,
+                    25592.720253164556,
+                    25762.066666666666
+                ],
+                [
+                    25980.26794871795,
+                    26256.215584415586,
+                    26413.4,
+                    25686.337974683545,
+                    25866.194871794873
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.protobuf",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 6181.244250050806,
+            "scoreError" : 3150.4462661481666,
+            "scoreConfidence" : [
+                3030.7979839026393,
+                9331.690516198973
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4744.19929245283,
+                "50.0" : 5080.603785466774,
+                "90.0" : 11087.355438630286,
+                "95.0" : 11482.916571428572,
+                "99.0" : 11482.916571428572,
+                "99.9" : 11482.916571428572,
+                "99.99" : 11482.916571428572,
+                "99.999" : 11482.916571428572,
+                "99.9999" : 11482.916571428572,
+                "100.0" : 11482.916571428572
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    5042.0849246231155,
+                    7527.305243445693,
+                    6315.787697160883,
+                    4996.836228287842,
+                    5119.122646310432
+                ],
+                [
+                    4744.19929245283,
+                    5034.290703517588,
+                    6670.458803986711,
+                    4879.440389294404,
+                    11482.916571428572
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.protostuff",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 23945.89074290697,
+            "scoreError" : 10415.516331639747,
+            "scoreConfidence" : [
+                13530.374411267223,
+                34361.40707454672
+            ],
+            "scorePercentiles" : {
+                "0.0" : 17641.326315789473,
+                "50.0" : 21862.404862385323,
+                "90.0" : 35621.31761709602,
+                "95.0" : 35886.63214285715,
+                "99.0" : 35886.63214285715,
+                "99.9" : 35886.63214285715,
+                "99.99" : 35886.63214285715,
+                "99.999" : 35886.63214285715,
+                "99.9999" : 35886.63214285715,
+                "100.0" : 35886.63214285715
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    26552.235526315788,
+                    28180.993243243243,
+                    25167.14,
+                    33233.486885245904,
+                    35886.63214285715
+                ],
+                [
+                    18557.669724770643,
+                    18278.58198198198,
+                    17884.9407079646,
+                    18075.900900900902,
+                    17641.326315789473
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.fastjson2",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 37180.01,
+            "scoreError" : 7718.490356043615,
+            "scoreConfidence" : [
+                29461.519643956388,
+                44898.500356043616
+            ],
+            "scorePercentiles" : {
+                "0.0" : 33371.7,
+                "50.0" : 36453.85,
+                "90.0" : 49472.22,
+                "95.0" : 50774.6,
+                "99.0" : 50774.6,
+                "99.9" : 50774.6,
+                "99.99" : 50774.6,
+                "99.999" : 50774.6,
+                "99.9999" : 50774.6,
+                "100.0" : 50774.6
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    50774.6,
+                    37438.4,
+                    37750.8,
+                    37696.3,
+                    34550.7
+                ],
+                [
+                    37365.2,
+                    35542.5,
+                    33900.7,
+                    33409.2,
+                    33371.7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.fury",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 22128.200000000004,
+            "scoreError" : 12487.181522634375,
+            "scoreConfidence" : [
+                9641.01847736563,
+                34615.38152263438
+            ],
+            "scorePercentiles" : {
+                "0.0" : 14483.9,
+                "50.0" : 20753.85,
+                "90.0" : 39949.82,
+                "95.0" : 41065.2,
+                "99.0" : 41065.2,
+                "99.9" : 41065.2,
+                "99.99" : 41065.2,
+                "99.999" : 41065.2,
+                "99.9999" : 41065.2,
+                "100.0" : 41065.2
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    20821.7,
+                    29911.4,
+                    25076.5,
+                    15018.2,
+                    14483.9
+                ],
+                [
+                    15172.5,
+                    20686.0,
+                    41065.2,
+                    21907.2,
+                    17139.4
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.furyUnsafe",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 21280.05,
+            "scoreError" : 8767.40319587179,
+            "scoreConfidence" : [
+                12512.64680412821,
+                30047.45319587179
+            ],
+            "scorePercentiles" : {
+                "0.0" : 14592.0,
+                "50.0" : 21108.35,
+                "90.0" : 32256.03,
+                "95.0" : 32638.3,
+                "99.0" : 32638.3,
+                "99.9" : 32638.3,
+                "99.99" : 32638.3,
+                "99.999" : 32638.3,
+                "99.9999" : 32638.3,
+                "100.0" : 32638.3
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    15770.8,
+                    15920.4,
+                    28815.6,
+                    20835.4,
+                    18100.1
+                ],
+                [
+                    21381.3,
+                    22793.4,
+                    32638.3,
+                    21953.2,
+                    14592.0
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.jdk",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 29252.719999999994,
+            "scoreError" : 5357.4244379807105,
+            "scoreConfidence" : [
+                23895.295562019284,
+                34610.14443798071
+            ],
+            "scorePercentiles" : {
+                "0.0" : 25004.0,
+                "50.0" : 28636.0,
+                "90.0" : 35294.04,
+                "95.0" : 35406.6,
+                "99.0" : 35406.6,
+                "99.9" : 35406.6,
+                "99.99" : 35406.6,
+                "99.999" : 35406.6,
+                "99.9999" : 35406.6,
+                "100.0" : 35406.6
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    35406.6,
+                    27976.5,
+                    30552.3,
+                    29295.5,
+                    27393.0
+                ],
+                [
+                    25066.9,
+                    25004.0,
+                    30653.8,
+                    26897.6,
+                    34281.0
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.kryo",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 31078.27,
+            "scoreError" : 4481.300881959494,
+            "scoreConfidence" : [
+                26596.969118040506,
+                35559.570881959495
+            ],
+            "scorePercentiles" : {
+                "0.0" : 27124.5,
+                "50.0" : 31114.050000000003,
+                "90.0" : 35478.64,
+                "95.0" : 35501.3,
+                "99.0" : 35501.3,
+                "99.9" : 35501.3,
+                "99.99" : 35501.3,
+                "99.999" : 35501.3,
+                "99.9999" : 35501.3,
+                "100.0" : 35501.3
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    35501.3,
+                    27124.5,
+                    30446.9,
+                    32534.5,
+                    28085.1
+                ],
+                [
+                    32680.9,
+                    35274.7,
+                    28366.4,
+                    28987.2,
+                    31781.2
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.protobuf",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 16294.830000000002,
+            "scoreError" : 36471.244878601035,
+            "scoreConfidence" : [
+                -20176.414878601034,
+                52766.07487860104
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5683.2,
+                "50.0" : 6704.75,
+                "90.0" : 77189.44000000002,
+                "95.0" : 83991.7,
+                "99.0" : 83991.7,
+                "99.9" : 83991.7,
+                "99.99" : 83991.7,
+                "99.999" : 83991.7,
+                "99.9999" : 83991.7,
+                "100.0" : 83991.7
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    10916.6,
+                    15423.8,
+                    15969.1,
+                    83991.7,
+                    7435.9
+                ],
+                [
+                    5881.3,
+                    5683.2,
+                    5973.6,
+                    5758.9,
+                    5914.2
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+    ,
+    {
+        "benchmark" : "com.jedivision.temple.benchmark.master.SerializationMaster.protostuff",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 2,
+        "warmupIterations" : 5,
+        "warmupTime" : "2 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "2 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 20874.48,
+            "scoreError" : 6307.608582539549,
+            "scoreConfidence" : [
+                14566.87141746045,
+                27182.08858253955
+            ],
+            "scorePercentiles" : {
+                "0.0" : 16652.5,
+                "50.0" : 20736.65,
+                "90.0" : 26134.84,
+                "95.0" : 26204.6,
+                "99.0" : 26204.6,
+                "99.9" : 26204.6,
+                "99.99" : 26204.6,
+                "99.999" : 26204.6,
+                "99.9999" : 26204.6,
+                "100.0" : 26204.6
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    18065.1,
+                    16885.7,
+                    16717.5,
+                    16652.5,
+                    16666.4
+                ],
+                [
+                    23408.2,
+                    26204.6,
+                    24424.9,
+                    25507.0,
+                    24212.9
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+
